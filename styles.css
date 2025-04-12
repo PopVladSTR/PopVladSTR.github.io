@@ -39,6 +39,98 @@ body {
   animation: slideBorder 3s infinite;
 }
 
+/* Buton Secret */
+.secret-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #f43f5e, #ec4899);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.secret-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.6);
+}
+
+/* Animație puls */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.6);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+  }
+}
+
+/* Secret Container */
+.secret-container {
+  max-width: 700px;
+  margin: 10vh auto;
+  background: rgba(255, 255, 255, 0.97);
+  padding: 4rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: zoomIn 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.secret-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.2), transparent);
+  animation: rotate 15s linear infinite;
+}
+
+.secret-container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #ec4899, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Buton Înapoi */
+.back-button {
+  display: inline-block;
+  background: linear-gradient(45deg, #10b981, #34d399);
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+}
+
 /* Animații */
 @keyframes fadeInUp {
   from {
@@ -71,7 +163,38 @@ body {
   }
 }
 
-/* Titluri */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Stiluri existente pentru container, secțiuni, etc. */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #3b82f6, #10b981);
+  animation: slideBorder 3s infinite;
+}
+
 h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -114,7 +237,6 @@ h3 {
   animation: fadeInUp 1.4s ease-out;
 }
 
-/* Secțiuni */
 .section {
   margin-bottom: 2.5rem;
   opacity: 0;
@@ -126,7 +248,6 @@ h3 {
 .section:nth-child(4) { animation-delay: 0.6s; }
 .section:nth-child(5) { animation-delay: 0.8s; }
 
-/* Contact */
 .contact {
   display: flex;
   gap: 2rem;
@@ -149,7 +270,6 @@ h3 {
   font-weight: 500;
 }
 
-/* Link-uri */
 a {
   color: #3b82f6;
   text-decoration: none;
@@ -177,7 +297,6 @@ a:hover {
   color: #1e40af;
 }
 
-/* Liste */
 ul {
   list-style: none;
 }
@@ -212,7 +331,6 @@ li::before {
   }
 }
 
-/* Paragrafe */
 p {
   color: #6b7280;
   font-size: 1.1rem;
@@ -225,7 +343,7 @@ em {
 
 /* Responsivitate */
 @media (max-width: 768px) {
-  .container {
+  .container, .secret-container {
     padding: 2rem;
     margin: 1.5rem;
   }
@@ -242,6 +360,13 @@ em {
     flex-direction: column;
     gap: 1rem;
   }
+
+  .secret-button {
+    top: 15px;
+    right: 15px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -253,11 +378,15 @@ em {
     font-size: 1.4rem;
   }
 
-  .container {
+  .container, .secret-container {
     padding: 1.5rem;
   }
 
   li {
     font-size: 1rem;
+  }
+
+  .secret-container h1 {
+    font-size: 1.8rem;
   }
 }
