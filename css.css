@@ -1,0 +1,165 @@
+/* Reset și stiluri de bază */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #f0f2f5 0%, #e3e8ee 100%);
+    color: #1a202c;
+    line-height: 1.7;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .container:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Titluri */
+  h1 {
+    font-size: 2.5rem;
+    color: #2d3748;
+    background: linear-gradient(to right, #3182ce, #4c51bf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    color: #2d3748;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  
+  h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #3182ce;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Secțiuni */
+  .section {
+    margin-bottom: 2rem;
+  }
+  
+  .contact {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    background: #f7fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  
+  .contact span {
+    font-size: 1rem;
+    color: #4a5568;
+  }
+  
+  /* Link-uri */
+  a {
+    color: #3182ce;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #2b6cb0;
+    text-decoration: underline;
+  }
+  
+  /* Liste */
+  ul {
+    list-style: none;
+  }
+  
+  li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #4a5568;
+  }
+  
+  li::before {
+    content: '•';
+    color: #3182ce;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+  }
+  
+  /* Paragrafe */
+  p {
+    color: #718096;
+    font-size: 1rem;
+  }
+  
+  em {
+    color: #4a5568;
+    font-style: italic;
+  }
+  
+  /* Responsivitate */
+  @media (max-width: 768px) {
+    .container {
+      padding: 1.5rem;
+      margin: 1rem;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    .contact {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    h2 {
+      font-size: 1.3rem;
+    }
+  
+    .container {
+      padding: 1rem;
+    }
+  }
