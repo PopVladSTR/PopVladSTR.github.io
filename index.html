@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat Criptat</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>💬 Chat Criptat</h1>
+      <div class="stats">
+        <span id="users">👥 Utilizatori: 0</span>
+        <span id="messages">✉️ Mesaje: 0</span>
+      </div>
+    </header>
+
+    <main>
+      <div id="chatBox" class="chat-box"></div>
+      <div class="input-group">
+        <input type="text" id="messageInput" placeholder="Scrie un mesaj criptat..." />
+        <button onclick="sendMessage()">Trimite</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
